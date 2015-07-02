@@ -11,14 +11,15 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
-        'Illuminate\Cookie\Middleware\EncryptCookies',
+        'Cms\Http\Middleware\IsInstalledMiddleware',
+        'Cms\Http\Middleware\InMaintenanceMiddleware',
+        'Cms\Modules\Core\Http\Middleware\ForceSecureMiddleware',
+        'Cms\Modules\Core\Http\Middleware\CORSMiddleware',
+        'Cms\Http\Middleware\EncryptCookies',
         'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
         'Illuminate\Session\Middleware\StartSession',
         'Illuminate\View\Middleware\ShareErrorsFromSession',
         'Cms\Http\Middleware\VerifyCsrfToken',
-        'Cms\Http\Middleware\IsInstalledMiddleware',
-        'Cms\Http\Middleware\InMaintenanceMiddleware',
-        'Cms\Modules\Core\Http\Middleware\ForceSecureMiddleware',
         'Cms\Modules\Core\Http\Middleware\ParseJsToBottomMiddleware',
         'Cms\Modules\Core\Http\Middleware\MinifyHtmlMiddleware',
     ];
@@ -29,9 +30,9 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth'       => 'Cms\Http\Middleware\Authenticate',
+        'auth' => 'Cms\Http\Middleware\Authenticate',
         'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-        'guest'      => 'Cms\Http\Middleware\RedirectIfAuthenticated',
+        'guest' => 'Cms\Http\Middleware\RedirectIfAuthenticated',
     ];
 
 }

@@ -15,7 +15,7 @@
         "cysha/pxcms-default-admin": "dev-master",
         "cysha/pxcms-adminlte": "dev-master",
         "xlink/pxcms-cysha": "dev-master",
-    
+
         "cysha/pxcms-core": "dev-master",
         "cysha/pxcms-auth": "dev-master",
         "cysha/pxcms-admin": "dev-master",
@@ -23,7 +23,6 @@
         "cysha/pxcms-social": "dev-master",
         "cysha/pxcms-forum": "dev-master",
         "cysha/pxcms-news": "dev-master"
-
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
@@ -54,14 +53,10 @@
     ],
     "scripts": {
         "post-install-cmd": [
-            "php artisan clear-compiled",
-            "php artisan cms:update",
-            "php artisan optimize"
+            "php artisan cms:update"
         ],
         "post-update-cmd": [
-            "php artisan clear-compiled",
-            "php artisan cms:update",
-            "php artisan optimize"
+            "php artisan cms:update"
         ],
         "post-create-project-cmd": [
             "php -r \"copy('.env.example', '.env');\"",

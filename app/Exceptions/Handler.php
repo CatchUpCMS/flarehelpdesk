@@ -2,6 +2,7 @@
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Theme;
 
 class Handler extends ExceptionHandler
 {
@@ -53,7 +54,8 @@ class Handler extends ExceptionHandler
             return $this->renderPdoException($e);
         }
 
-        return parent::render($request, $e);
+        return $this->renderErrorPage($e);
+        //return parent::render($request, $e);
     }
 
     /**
@@ -132,6 +134,23 @@ class Handler extends ExceptionHandler
             $e->getStatusCode(),
             $e->getHeaders()
         );
+    }
+
+    /**
+     * Render an error page.
+     *
+     * @param  \Exception $e
+     * @return \Illuminate\Http\Response
+     */
+    protected function renderErrorPage(Exception $e)
+    {
+        $objTheme = Theme::uses(getCurrentTheme())->layout('1-column');
+
+        $code = $e->getStatusCode();
+
+        return $objTheme
+            ->scope('partials.theme.errors.'.$code, compact('code'))
+            ->render($code);
     }
 
 }
