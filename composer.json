@@ -22,6 +22,7 @@
 
         "cysha/pxcms-social": "dev-master",
         "cysha/pxcms-forum": "dev-master",
+        "cysha/pxcms-profile": "dev-master",
         "cysha/pxcms-news": "dev-master"
     },
     "require-dev": {
