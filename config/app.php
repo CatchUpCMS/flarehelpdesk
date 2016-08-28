@@ -148,6 +148,12 @@ return [
          */
         'Cms\Modules\Core\Providers\CmsModulesProvider',
 
+        Radic\BladeExtensions\BladeExtensionsServiceProvider::class
+
+
+
+
+
     ],
 
     /*
