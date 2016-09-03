@@ -1,4 +1,5 @@
-<?php namespace Cms\Console;
+<?php
+namespace Cms\Console;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Foundation\Application;
@@ -30,7 +31,7 @@ class Kernel extends ConsoleKernel
       if (!$module->enabled()) {
         return;
       }
-      $class = sprintf('\Cms\Modules\%s\Console\Kernel', ucwords($module));
+      $class = sprintf('\Layako\Modules\%s\Console\Kernel', ucwords($module));
       if (!class_exists($class)) {
         continue;
       }

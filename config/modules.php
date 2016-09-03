@@ -56,7 +56,7 @@ return [
     | automatically to list of scanned folders.
     |
     */
-    'modules' => app_path('Modules'),
+    'modules' => base_path('Modules'),
     /*
     |--------------------------------------------------------------------------
     | Modules assets path

@@ -40,7 +40,7 @@
 <body>
 <div class="container">
   <div class="content">
-    <div class="title">Phoenix CMS</div>
+    <div class="title">Layako</div>
     <div class="quote">This site is not quite ready to be live. Watch this space!</div>
   </div>
 </div>

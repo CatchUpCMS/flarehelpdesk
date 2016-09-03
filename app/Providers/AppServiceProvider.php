@@ -1,4 +1,5 @@
-<?php namespace Cms\Providers;
+<?php
+namespace Cms\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -28,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
   {
     $this->app->bind(
       'Illuminate\Contracts\Auth\Registrar',
-      'Cms\Services\Registrar'
+      'Layako\Services\Registrar'
     );
   }
 

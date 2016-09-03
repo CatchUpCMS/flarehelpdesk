@@ -1,6 +1,6 @@
 <?php namespace Cms\Services;
 
-use Cms\User;
+use Layako\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 

@@ -16,7 +16,7 @@ class BusServiceProvider extends ServiceProvider
   {
     $dispatcher->mapUsing(function ($command) {
       return Dispatcher::simpleMapping(
-        $command, 'Cms\Commands', 'Cms\Handlers\Commands'
+        $command, 'Layako\Commands', 'Layako\Handlers\Commands'
       );
     });
   }

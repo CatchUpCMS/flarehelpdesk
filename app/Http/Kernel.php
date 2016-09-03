@@ -11,17 +11,17 @@ class Kernel extends HttpKernel
    */
   protected $middleware = [
     'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
-    'Cms\Http\Middleware\IsInstalledMiddleware',
-    'Cms\Modules\Core\Http\Middleware\ForceSecureMiddleware',
-    'Cms\Modules\Core\Http\Middleware\CORSMiddleware',
-    'Cms\Http\Middleware\EncryptCookies',
+    'Layako\Http\Middleware\IsInstalledMiddleware',
+    'Layako\Modules\Core\Http\Middleware\ForceSecureMiddleware',
+    'Layako\Modules\Core\Http\Middleware\CORSMiddleware',
+    'Layako\Http\Middleware\EncryptCookies',
     'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
     'Illuminate\Session\Middleware\StartSession',
-    'Cms\Http\Middleware\InMaintenanceMiddleware',
+    'Layako\Http\Middleware\InMaintenanceMiddleware',
     'Illuminate\View\Middleware\ShareErrorsFromSession',
-    'Cms\Http\Middleware\VerifyCsrfToken',
-    'Cms\Modules\Core\Http\Middleware\ParseJsToBottomMiddleware',
-    'Cms\Modules\Core\Http\Middleware\MinifyHtmlMiddleware',
+    'Layako\Http\Middleware\VerifyCsrfToken',
+    'Layako\Modules\Core\Http\Middleware\ParseJsToBottomMiddleware',
+    'Layako\Modules\Core\Http\Middleware\MinifyHtmlMiddleware',
   ];
 
   /**
@@ -30,9 +30,9 @@ class Kernel extends HttpKernel
    * @var array
    */
   protected $routeMiddleware = [
-    'auth' => 'Cms\Http\Middleware\Authenticate',
+    'auth' => 'Layako\Http\Middleware\Authenticate',
     'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-    'guest' => 'Cms\Http\Middleware\RedirectIfAuthenticated',
+    'guest' => 'Layako\Http\Middleware\RedirectIfAuthenticated',
   ];
 
 }

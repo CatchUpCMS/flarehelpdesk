@@ -13,7 +13,7 @@ class Handler extends ExceptionHandler
    */
   protected $dontReport = [
     'Symfony\Component\HttpKernel\Exception\HttpException',
-    'Cms\Modules\Core\Exceptions\NotInstalledException'
+    'Layako\Modules\Core\Exceptions\NotInstalledException'
   ];
 
   /**
@@ -38,10 +38,10 @@ class Handler extends ExceptionHandler
    */
   public function render($request, Exception $e)
   {
-    if ($e instanceof \Cms\Modules\Core\Exceptions\NotInstalledException) {
+    if ($e instanceof \Layako\Modules\Core\Exceptions\NotInstalledException) {
       return $this->renderNotInstalled($e);
     }
-    if ($e instanceof \Cms\Modules\Core\Exceptions\InMaintenanceException) {
+    if ($e instanceof \Layako\Modules\Core\Exceptions\InMaintenanceException) {
       return $this->renderInMaintenance($e);
     }
     //if (config('app.debug') && class_exists('\Whoops\Run')) {
